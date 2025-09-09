@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: ${{ values.name + '-ec2' | dump }}  # dump: convert data types (objects/arrays) into yaml compatible string format
+  name: "${{ values.name + '-ec2' | dump }}"  # dump: convert data types (objects/arrays) into yaml compatible string format
   description: Stores backstage details
   tags:
     - java
