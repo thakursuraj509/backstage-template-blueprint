@@ -1,4 +1,22 @@
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{ values.name + '-ec2' | dump }}
+  description: Stores backstage details
+  tags:
+    - java
+  links:
+    - url: https://github.com
+      title: Admin Dashboard
+      icon: dashboard
+      type: admin-dashboard
+spec:
+  type: database # s3-bucket, kubernetes-cluster [REQUIRED]
+  owner: ${{ values.owner }} # Group/Users [REQUIRED]
+  lifecycle: experimental # production, deprecated [REQUIRED]
+  # system: public-websites # System
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
